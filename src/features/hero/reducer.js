@@ -1,18 +1,18 @@
 
-const initialState = {move:[-50,-50]};
+const initialState = {move:[-50,-50],shoot:[100]};
 
 
 const movementReducer= (state = initialState, action)=>{
     const updateState = { ...state };
     switch (action.type) {
-        case "UP":
-            updateState.move[0] = state.move[0] - 25;
-            console.log(state.move);
-            return updateState;
-            case "DOWN":
-            updateState.move[0] = state.move[0] + 25;
-            console.log(state.move);
-            return updateState;
+        // case "UP":
+        //     updateState.move[0] = state.move[0] - 25;
+        //     console.log(state.move);
+        //     return updateState;
+        //     case "DOWN":
+        //     updateState.move[0] = state.move[0] + 25;
+        //     console.log(state.move);
+        //     return updateState;
             case "LEFT":
             updateState.move[1] = state.move[1] - 25;
             console.log(state.move);
@@ -20,6 +20,10 @@ const movementReducer= (state = initialState, action)=>{
             case "RIGHT":
             updateState.move[1] = state.move[1] + 25;
             console.log(state.move);
+            return updateState;
+            case "SHOOT":
+                updateState.shoot[0] = state.shoot[0] + 1;
+                console.log(state.shoot);
             return updateState;
         default:
             return state;
@@ -46,4 +50,10 @@ export const moveleft = () => {
         type: "RIGHT"
     }
 }
+export const shooter = () => {
+    return {
+        type: "SHOOT"
+    }
+}
+
 export default movementReducer

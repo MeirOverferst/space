@@ -8,11 +8,11 @@ import { connect } from 'react-redux'
     render(){
         const pos=this.props.heroposition.move;
 
-        console.log("this.props.heroposition.move",this.props.heroposition.move);
+        // console.log("this.props.heroposition.move",this.props.heroposition.move);
         const heroStyle={
             position: "relative",
             left:"50%",
-            top: "97%",
+            top: "90%",
             width: "50px",
             height:"50px",
             transform:` translate(${pos[1]}%,${pos[0]}%)`, 
